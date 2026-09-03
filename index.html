@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAPPY MONTHSARY❤️</title>
+    <title>Para sa Mahal Ko ❤️</title>
 
     <style>
         :root {
             --cream: #f4eed8;
             --ink: #1c1409;
             --red: #e8200e;
-            --lime: #bef03c;
-            --blue: #2b36ff;
-            --orange: #ff6d00;
             --paper: #fffae8;
         }
 
@@ -24,9 +21,7 @@
 
         body {
             min-height: 100vh;
-            background-color: var(--cream);
-            background-image:
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f4eed8'/%3E%3Ccircle cx='1' cy='1' r='.4' fill='%23d4c8a0' opacity='.5'/%3E%3C/svg%3E");
+            background: linear-gradient(135deg, #fce4ec, #f3e5f5, #e8eaf6);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,18 +29,8 @@
             padding: 20px;
         }
 
-        @font-face {
-            font-family: 'CustomFont';
-            src: url('Provicali.otf') format('opentype');
-        }
-
-        @font-face {
-            font-family: 'cursivexd';
-            src: url('Antigritas.ttf') format('truetype');
-        }
-
-        .letter-container {
-            max-width: 700px;
+        .container {
+            max-width: 750px;
             width: 100%;
             background: var(--paper);
             padding: 50px 45px;
@@ -53,9 +38,10 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
             border: 1px solid rgba(0,0,0,0.05);
             position: relative;
+            margin-top: 80px;
         }
 
-        .letter-container::before {
+        .container::before {
             content: '💌';
             position: absolute;
             top: -30px;
@@ -67,26 +53,81 @@
             border-radius: 50px;
         }
 
-        .header-decoration {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px dashed #d4c8a0;
-            padding-bottom: 20px;
+        /* ===== SCRABBLE TITLE ===== */
+        .scrabble-title {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px 0 15px;
+            perspective: 800px;
         }
 
-        .header-decoration h1 {
-            font-family: 'CustomFont', cursive;
-            font-size: 48px;
-            color: var(--ink);
-            letter-spacing: 2px;
-            font-weight: 300;
+        .tile {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: #f5e6c8;
+            border-radius: 6px;
+            box-shadow: 
+                0 4px 0 #b8956a,
+                0 8px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            line-height: 55px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #3e2723;
+            font-family: 'Georgia', serif;
+            transform-style: preserve-3d;
+            animation: floatTile 3s ease-in-out infinite;
+            transition: transform 0.3s;
+        }
+
+        .tile:nth-child(1) { animation-delay: 0s; }
+        .tile:nth-child(2) { animation-delay: 0.15s; }
+        .tile:nth-child(3) { animation-delay: 0.3s; }
+        .tile:nth-child(4) { animation-delay: 0.45s; }
+        .tile:nth-child(5) { animation-delay: 0.6s; }
+        .tile:nth-child(6) { animation-delay: 0.75s; }
+        .tile:nth-child(7) { animation-delay: 0.9s; }
+        .tile:nth-child(8) { animation-delay: 1.05s; }
+        .tile:nth-child(9) { animation-delay: 1.2s; }
+        .tile:nth-child(10) { animation-delay: 1.35s; }
+        .tile:nth-child(11) { animation-delay: 1.5s; }
+        .tile:nth-child(12) { animation-delay: 1.65s; }
+        .tile:nth-child(13) { animation-delay: 1.8s; }
+        .tile:nth-child(14) { animation-delay: 1.95s; }
+
+        .tile:hover {
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        @keyframes floatTile {
+            0% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            50% {
+                transform: translateY(-12px) rotate(3deg) scale(1.05);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+        }
+
+        /* ===== LETTER BODY ===== */
+        .header-decoration {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #d4c8a0;
+            padding-bottom: 10px;
         }
 
         .header-decoration .sub {
-            font-family: 'cursivexd', cursive;
-            font-size: 20px;
-            color: var(--blue);
-            opacity: 0.7;
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            color: #7b5b3a;
+            opacity: 0.8;
+            font-style: italic;
         }
 
         .letter-body {
@@ -103,16 +144,19 @@
             color: var(--red);
         }
 
+        /* ===== JUSTIFIED TEXT ===== */
         .letter-body p {
             margin-bottom: 16px;
+            text-align: justify;
+            text-justify: inter-word;
             text-indent: 30px;
         }
 
         .letter-body .closing {
             text-align: right;
             margin-top: 30px;
-            font-family: 'CustomFont', cursive;
-            font-size: 28px;
+            font-family: 'Georgia', serif;
+            font-size: 24px;
             color: var(--red);
             border-top: 1px solid #e0d6b8;
             padding-top: 25px;
@@ -135,63 +179,70 @@
         }
 
         @media screen and (max-width: 600px) {
-            .letter-container {
+            .container {
                 padding: 30px 20px;
+                margin-top: 60px;
             }
 
-            .header-decoration h1 {
-                font-size: 32px;
+            .tile {
+                width: 38px;
+                height: 38px;
+                line-height: 38px;
+                font-size: 16px;
+            }
+
+            .scrabble-title {
+                gap: 5px;
             }
 
             .letter-body {
                 font-size: 16px;
-            }
-
-            .letter-body .closing {
-                font-size: 22px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="letter-container">
+    <div class="container">
+
+        <!-- ===== SCRABBLE TITLE ===== -->
+        <div class="scrabble-title">
+            <span class="tile">H</span>
+            <span class="tile">A</span>
+            <span class="tile">P</span>
+            <span class="tile">P</span>
+            <span class="tile">Y</span>
+            <span class="tile">M</span>
+            <span class="tile">O</span>
+            <span class="tile">N</span>
+            <span class="tile">T</span>
+            <span class="tile">H</span>
+            <span class="tile">S</span>
+            <span class="tile">A</span>
+            <span class="tile">R</span>
+            <span class="tile">Y</span>
+        </div>
+
         <div class="header-decoration">
-            <h1>💖 HAPPY MONTHSARY MAMHIE💖</h1>
-            <div class="sub"></div>
+            <div class="sub">~ Isang Sulat mula sa Puso ~</div>
         </div>
 
         <div class="letter-body">
             <div class="greeting">Mamhie,</div>
 
             <p>
-                Goodmorning my beautiful Wife 💖 HAPPY MONTHSARY PO 💖 
+                Goodmorning my beautiful Wife ❤️ HAPPY MONTHSARY PO ❤️
             </p>
             <p>
-                Mhie, maaram ako nga maaram kana kun gaano ako ka thankful nga iginhatag ka ni God haak, Tikang hadto hasta yana
-                mas napapamahal pa ako haim mhie, thank you han Love nga imo iginhahatag po haak, tanan na imo ginhihimo na-aappreciate 
-                ko iton tanan mhie. Labi na yana nga LDR po kita, makuri pero kaya ta po ine mhie. Para hit aton mga pangarap magtitiis la 
-                anay kita. Kay puhon usa na nga balay at uulian 💖.
+                Mhie, maaram ako nga maaram kana kun gaano ako ka thankful nga iginhatag ka ni God haak. Tikang hadto hasta yana mas napapamahal pa ako haim mhie, thank you han Love nga imo iginhahatag po haak, tanan na imo ginhihimo na-aappreciate ko iton tanan mhie. Labi na yana nga LDR po kita, makuri pero kaya ta po ine mhie. Para hit aton mga pangarap magtitiis la anay kita. Kay puhon usa na nga balay at uulian ❤️.
             </p>
-
             <p>
-                Pasensya na po mhie kun may panahon nga usa ako nga nagpapainit tim ulo. Sorry kun danay nasasakitan ka tak gibubuhat, 
-                kun may nahihimo ako nga makakasakit haim po. sorry mamhie..
-            </p>
-
-            <p>
-                I Love You akon asawa, iton nga mga yakan in diri ako magsasawa nga igsiring ngan iparamdam po haim. Thankyou hit pagtapod
-                na imo ginhahatag haak. Promise na diri ko ikaw sasaktan sugad an imo naranasan han mga una mo nga karelasyon.. 
-                iingatan ko ikaw ngan mamahalon ha mga paraan na maaram ak ngan tama.. 
-            </p>
-
-            <p>
-                Mahal na mahal na mahaaaaal kita akon asawa 💖. Again HAPPY MONTHSARY MAMHIE ILOVEYOU & IMISSYOU SO MUCH 💖 
+                Pasensya na po mhie kun may panahon nga usa ako nga nagpapainit tim ulo. Sorry kun danayan nasasakitan ka tak ginbubuhAt kun may nahihimo ako.
             </p>
 
             <div class="closing">
-                
-                <span>— MAYIE </span>
+                Mahal na mahal kita,
+                <span>— Mayie</span>
             </div>
         </div>
 
