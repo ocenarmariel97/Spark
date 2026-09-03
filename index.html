@@ -26,14 +26,14 @@
             justify-content: center;
             align-items: center;
             font-family: 'Georgia', serif;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 750px;
+            max-width: 600px;  /* Mas makitid para parang tunay na sulat */
             width: 100%;
             background: var(--paper);
-            padding: 50px 45px;
+            padding: 50px 55px;  /* Mas malaki ang padding sa gilid */
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
             border: 1px solid rgba(0,0,0,0.05);
@@ -54,49 +54,58 @@
         }
 
         /* ===== SCRABBLE TITLE ===== */
-        .scrabble-title {
+        .scrabble-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin: 10px 0 20px;
+        }
+
+        .scrabble-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 8px;
-            margin: 20px 0 15px;
             perspective: 800px;
         }
 
         .tile {
             display: inline-block;
-            width: 55px;
-            height: 55px;
-            background: #f5e6c8;
+            width: 50px;
+            height: 50px;
             border-radius: 6px;
             box-shadow: 
                 0 4px 0 #b8956a,
                 0 8px 15px rgba(0,0,0,0.2);
             text-align: center;
-            line-height: 55px;
-            font-size: 24px;
+            line-height: 50px;
+            font-size: 22px;
             font-weight: bold;
-            color: #3e2723;
+            color: #fff;
             font-family: 'Georgia', serif;
             transform-style: preserve-3d;
             animation: floatTile 3s ease-in-out infinite;
             transition: transform 0.3s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
-        .tile:nth-child(1) { animation-delay: 0s; }
-        .tile:nth-child(2) { animation-delay: 0.15s; }
-        .tile:nth-child(3) { animation-delay: 0.3s; }
-        .tile:nth-child(4) { animation-delay: 0.45s; }
-        .tile:nth-child(5) { animation-delay: 0.6s; }
-        .tile:nth-child(6) { animation-delay: 0.75s; }
-        .tile:nth-child(7) { animation-delay: 0.9s; }
-        .tile:nth-child(8) { animation-delay: 1.05s; }
-        .tile:nth-child(9) { animation-delay: 1.2s; }
-        .tile:nth-child(10) { animation-delay: 1.35s; }
-        .tile:nth-child(11) { animation-delay: 1.5s; }
-        .tile:nth-child(12) { animation-delay: 1.65s; }
-        .tile:nth-child(13) { animation-delay: 1.8s; }
-        .tile:nth-child(14) { animation-delay: 1.95s; }
+        /* ===== COLORS PER LETTER ===== */
+        .tile:nth-child(1) { background: #e74c3c; }
+        .tile:nth-child(2) { background: #3498db; }
+        .tile:nth-child(3) { background: #2ecc71; }
+        .tile:nth-child(4) { background: #f1c40f; }
+        .tile:nth-child(5) { background: #e67e22; }
+
+        .tile:nth-child(6) { background: #9b59b6; }
+        .tile:nth-child(7) { background: #1abc9c; }
+        .tile:nth-child(8) { background: #e74c3c; }
+        .tile:nth-child(9) { background: #3498db; }
+        .tile:nth-child(10) { background: #2ecc71; }
+        .tile:nth-child(11) { background: #f1c40f; }
+        .tile:nth-child(12) { background: #e67e22; }
+        .tile:nth-child(13) { background: #9b59b6; }
+        .tile:nth-child(14) { background: #1abc9c; }
 
         .tile:hover {
             transform: rotateY(180deg) scale(1.1);
@@ -124,7 +133,7 @@
 
         .header-decoration .sub {
             font-family: 'Georgia', serif;
-            font-size: 16px;
+            font-size: 15px;
             color: #7b5b3a;
             opacity: 0.8;
             font-style: italic;
@@ -132,39 +141,38 @@
 
         .letter-body {
             font-family: 'Georgia', serif;
-            font-size: 18px;
+            font-size: 17px;
             line-height: 1.9;
             color: var(--ink);
         }
 
         .letter-body .greeting {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: var(--red);
         }
 
-        /* ===== JUSTIFIED TEXT ===== */
         .letter-body p {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             text-align: justify;
             text-justify: inter-word;
-            text-indent: 30px;
+            text-indent: 28px;
         }
 
         .letter-body .closing {
             text-align: right;
-            margin-top: 30px;
+            margin-top: 25px;
             font-family: 'Georgia', serif;
-            font-size: 24px;
+            font-size: 22px;
             color: var(--red);
             border-top: 1px solid #e0d6b8;
-            padding-top: 25px;
+            padding-top: 20px;
         }
 
         .letter-body .closing span {
             display: block;
-            font-size: 16px;
+            font-size: 15px;
             font-family: 'Georgia', serif;
             color: var(--ink);
             margin-top: 5px;
@@ -172,10 +180,10 @@
 
         .heart-decoration {
             text-align: center;
-            font-size: 30px;
-            margin-top: 25px;
+            font-size: 26px;
+            margin-top: 20px;
             color: var(--red);
-            letter-spacing: 8px;
+            letter-spacing: 6px;
         }
 
         @media screen and (max-width: 600px) {
@@ -185,18 +193,18 @@
             }
 
             .tile {
-                width: 38px;
-                height: 38px;
-                line-height: 38px;
-                font-size: 16px;
+                width: 36px;
+                height: 36px;
+                line-height: 36px;
+                font-size: 15px;
             }
 
-            .scrabble-title {
+            .scrabble-row {
                 gap: 5px;
             }
 
             .letter-body {
-                font-size: 16px;
+                font-size: 15px;
             }
         }
     </style>
@@ -206,25 +214,31 @@
     <div class="container">
 
         <!-- ===== SCRABBLE TITLE ===== -->
-        <div class="scrabble-title">
-            <span class="tile">H</span>
-            <span class="tile">A</span>
-            <span class="tile">P</span>
-            <span class="tile">P</span>
-            <span class="tile">Y</span>
-            <span class="tile">M</span>
-            <span class="tile">O</span>
-            <span class="tile">N</span>
-            <span class="tile">T</span>
-            <span class="tile">H</span>
-            <span class="tile">S</span>
-            <span class="tile">A</span>
-            <span class="tile">R</span>
-            <span class="tile">Y</span>
+        <div class="scrabble-wrapper">
+            <!-- HAPPY -->
+            <div class="scrabble-row">
+                <span class="tile">H</span>
+                <span class="tile">A</span>
+                <span class="tile">P</span>
+                <span class="tile">P</span>
+                <span class="tile">Y</span>
+            </div>
+            <!-- MONTHSARY -->
+            <div class="scrabble-row">
+                <span class="tile">M</span>
+                <span class="tile">O</span>
+                <span class="tile">N</span>
+                <span class="tile">T</span>
+                <span class="tile">H</span>
+                <span class="tile">S</span>
+                <span class="tile">A</span>
+                <span class="tile">R</span>
+                <span class="tile">Y</span>
+            </div>
         </div>
 
         <div class="header-decoration">
-            <div class="sub">~ Isang Sulat mula sa Puso ~</div>
+            <div class="sub"></div>
         </div>
 
         <div class="letter-body">
@@ -234,15 +248,20 @@
                 Goodmorning my beautiful Wife ❤️ HAPPY MONTHSARY PO ❤️
             </p>
             <p>
-                Mhie, maaram ako nga maaram kana kun gaano ako ka thankful nga iginhatag ka ni God haak. Tikang hadto hasta yana mas napapamahal pa ako haim mhie, thank you han Love nga imo iginhahatag po haak, tanan na imo ginhihimo na-aappreciate ko iton tanan mhie. Labi na yana nga LDR po kita, makuri pero kaya ta po ine mhie. Para hit aton mga pangarap magtitiis la anay kita. Kay puhon usa na nga balay at uulian ❤️.
+                Mhie, Thankyou po han nga tanan na imo LOVE na ginhatatag haak, an Pag-intindi, Pag-pasensya ngan an Pag-aalaga na imo ginhahatag haak.❤️
+                Na aapreciate ko po iton tanan ngan ramdam ko po iton. Iloveyou akon asawa. Sana umabot na it panahon na mag kakaupod na po kita mhie.
+                Miss na miss na miss ko na po ikaw. Ilob la anay kita it LDR yana mhie kay diri nala maiha puhon makakalanat na po ako haim❤️
+
             </p>
             <p>
                 Pasensya na po mhie kun may panahon nga usa ako nga nagpapainit tim ulo. Sorry kun danayan nasasakitan ka tak ginbubuhAt kun may nahihimo ako.
+                Mabawi po ako sunod mhie.. see you soooon mamhie.. IMISSYOU & ILOVEYOU SO MUCH❤️ ingat ka permi ngada. 
+                HAPPY MONTHSARY AKON ASAWA❤️❤️❤️
             </p>
 
             <div class="closing">
-                Mahal na mahal kita,
-                <span>— Mayie</span>
+                
+             <span>— Mayie</span>
             </div>
         </div>
 
