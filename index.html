@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Monthsary mamhie ❤️</title>
+    <title>Para sa Mahal Ko ❤️</title>
 
     <style>
         :root {
@@ -27,6 +27,24 @@
             align-items: center;
             font-family: 'Georgia', serif;
             padding: 40px 20px;
+            position: relative;
+        }
+
+        /* ===== BACKGROUND IMAGE WITH FADE EFFECT ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;  /* <-- FADE EFFECT: napaka-light lang */
+            z-index: 0;
+            pointer-events: none;
         }
 
         .container {
@@ -39,6 +57,7 @@
             border: 1px solid rgba(0,0,0,0.04);
             position: relative;
             margin-top: 70px;
+            z-index: 1;
         }
 
         .container::before {
@@ -90,7 +109,6 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
         }
 
-        /* ===== WAVE ANIMATION (parang pa-alon) ===== */
         @keyframes waveTile {
             0%, 100% {
                 transform: translateY(0px) rotate(0deg) scale(1);
@@ -106,15 +124,13 @@
             }
         }
 
-        /* ===== DELAY PER LETTER (para magkaron ng wave effect) ===== */
-        /* HAPPY row */
+        /* ===== DELAY PER LETTER ===== */
         .scrabble-row:first-child .tile:nth-child(1) { animation-delay: 0s; }
         .scrabble-row:first-child .tile:nth-child(2) { animation-delay: 0.12s; }
         .scrabble-row:first-child .tile:nth-child(3) { animation-delay: 0.24s; }
         .scrabble-row:first-child .tile:nth-child(4) { animation-delay: 0.36s; }
         .scrabble-row:first-child .tile:nth-child(5) { animation-delay: 0.48s; }
 
-        /* MONTHSARY row */
         .scrabble-row:last-child .tile:nth-child(1) { animation-delay: 0.1s; }
         .scrabble-row:last-child .tile:nth-child(2) { animation-delay: 0.22s; }
         .scrabble-row:last-child .tile:nth-child(3) { animation-delay: 0.34s; }
@@ -129,7 +145,7 @@
             transform: rotateY(180deg) scale(1.1);
         }
 
-        /* ===== COLORS PER LETTER (pastel/soft romantic) ===== */
+        /* ===== COLORS PER LETTER ===== */
         .tile:nth-child(1) { background: #e67e8f; }
         .tile:nth-child(2) { background: #6c9bcb; }
         .tile:nth-child(3) { background: #7fc29b; }
@@ -256,9 +272,8 @@
 
     <div class="container">
 
-        <!-- ===== SCRABBLE TITLE WITH WAVE ===== -->
+        <!-- ===== SCRABBLE TITLE ===== -->
         <div class="scrabble-wrapper">
-            <!-- HAPPY row -->
             <div class="scrabble-row">
                 <span class="tile">H</span>
                 <span class="tile">A</span>
@@ -266,7 +281,6 @@
                 <span class="tile">P</span>
                 <span class="tile">Y</span>
             </div>
-            <!-- MONTHSARY row -->
             <div class="scrabble-row">
                 <span class="tile">M</span>
                 <span class="tile">O</span>
@@ -281,14 +295,14 @@
         </div>
 
         <div class="header-decoration">
-            <div class="sub">~ Isang Sulat mula sa Puso ~</div>
+            <div class="sub"></div>
         </div>
 
         <div class="letter-body">
             <div class="greeting">Mamhie,</div>
 
             <p>
-                Goodmorning my beautiful Wife ❤️ HAPPY MONTHSARY PO ❤️
+                Goodmorning my beautiful Wife❤️ HAPPY MONTHSARY PO ❤️
             </p>
             <p>
                 Mhie, Thankyou po han nga tanan na imo LOVE na ginhatatag haak, an Pag-intindi, Pag-pasensya ngan an Pag-aalaga na imo ginhahatag haak. ❤️
@@ -296,7 +310,7 @@
                 Miss na miss na miss ko na po ikaw. Ilob la anay kita it LDR yana mhie kay diri nala maiha puhon makakalanat na po ako haim ❤️
             </p>
             <p>
-                Pasensya na po mhie kun may panahon nga usa ako nga nagpapainit tim ulo. Sorry kun danay nasasakitan ka tak ginbubuhAt kun may nahihimo ako.
+                Pasensya na po mhie kun may panahon nga usa ako nga nagpapainit tim ulo. Sorry kun danayan nasasakitan ka tak ginbubuhAt kun may nahihimo ako.
                 Mabawi po ako sunod mhie.. see you soooon mamhie.. IMISSYOU & ILOVEYOU SO MUCH ❤️ ingat ka permi ngada. 
                 HAPPY MONTHSARY AKON ASAWA ❤️❤️❤️
             </p>
