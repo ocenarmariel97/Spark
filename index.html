@@ -30,7 +30,7 @@
             position: relative;
         }
 
-        /* ===== BACKGROUND IMAGE WITH FADE EFFECT ===== */
+        /* ===== BACKGROUND NG BUONG PAGE (faded) ===== */
         body::before {
             content: '';
             position: fixed;
@@ -38,26 +38,34 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-image: url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.15;  /* <-- FADE EFFECT: napaka-light lang */
+            opacity: 0.10;
             z-index: 0;
             pointer-events: none;
         }
 
+        /* ===== CONTAINER NA MAY CARTOON BACKGROUND ===== */
         .container {
             max-width: 600px;
             width: 100%;
-            background: var(--paper);
             padding: 45px 40px 40px;
             border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
             border: 1px solid rgba(0,0,0,0.04);
             position: relative;
             margin-top: 70px;
             z-index: 1;
+
+            /* ===== BACKGROUND NG SULAT (CARTOON COUPLE) ===== */
+            background-image: url('https://i.pinimg.com/736x/8f/4e/1c/8f4e1c4b7f8b7f8b7f8b7f8b7f8b7f8b.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(255, 250, 232, 0.88);
         }
 
         .container::before {
@@ -67,9 +75,11 @@
             left: 50%;
             transform: translateX(-50%);
             font-size: 44px;
-            background: var(--paper);
+            background: #fffae8;
             padding: 0 14px;
             border-radius: 50px;
+            z-index: 2;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         /* ===== SCRABBLE TITLE WITH WAVE EFFECT ===== */
@@ -79,6 +89,8 @@
             align-items: center;
             gap: 4px;
             margin: 5px 0 18px;
+            position: relative;
+            z-index: 2;
         }
 
         .scrabble-row {
@@ -166,8 +178,10 @@
         .header-decoration {
             text-align: center;
             margin-bottom: 16px;
-            border-bottom: 2px dashed #d4c8a0;
+            border-bottom: 2px dashed rgba(212, 200, 160, 0.6);
             padding-bottom: 8px;
+            position: relative;
+            z-index: 2;
         }
 
         .header-decoration .sub {
@@ -184,6 +198,8 @@
             font-size: 17px;
             line-height: 1.85;
             color: var(--ink);
+            position: relative;
+            z-index: 2;
         }
 
         .letter-body .greeting {
@@ -206,7 +222,7 @@
             font-family: 'Georgia', serif;
             font-size: 20px;
             color: #c0392b;
-            border-top: 1px solid #e0d6b8;
+            border-top: 1px solid rgba(224, 214, 184, 0.6);
             padding-top: 18px;
         }
 
@@ -226,6 +242,8 @@
             color: #c0392b;
             letter-spacing: 6px;
             opacity: 0.8;
+            position: relative;
+            z-index: 2;
         }
 
         @media screen and (max-width: 600px) {
