@@ -19,8 +19,9 @@
             align-items: center;
             flex-direction: column;
             z-index: 9999;
-            transition: opacity 3s ease, visibility 5s ease;
+            transition: opacity 3s ease, visibility 3s ease;
             overflow: hidden;
+            padding: 20px;
         }
 
         .splash-screen.hidden {
@@ -36,6 +37,7 @@
             background: radial-gradient(circle, rgba(255, 107, 129, 0.06), transparent 70%);
             border-radius: 50%;
             animation: glowPulse 4s ease-in-out infinite;
+            z-index: 0;
         }
 
         .splash-screen .glow:nth-child(1) {
@@ -70,6 +72,7 @@
             height: 100%;
             pointer-events: none;
             overflow: hidden;
+            z-index: 0;
         }
 
         .splash-heart {
@@ -114,6 +117,7 @@
             font-size: 10px;
             animation: splashSparkle 4s ease-in-out infinite;
             pointer-events: none;
+            z-index: 0;
         }
 
         .splash-sparkle:nth-child(1) { left: 6%; top: 25%; animation-delay: 0s; }
@@ -143,72 +147,116 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 20px;
+            padding: 0 10px;
             text-align: center;
             perspective: 800px;
+            max-width: 100%;
         }
 
         .dice-word {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 6px;
-            margin-bottom: 5px;
+            gap: 4px;
+            margin-bottom: 2px;
         }
 
         .dice-letter {
             display: inline-block;
             font-family: 'Georgia', serif;
-            font-size: 44px;
             font-weight: 700;
             color: #ff6b81;
             text-shadow: 0 0 30px rgba(255, 107, 129, 0.3);
             background: rgba(255, 255, 255, 0.03);
-            padding: 5px 8px;
-            border-radius: 8px;
+            padding: 4px 6px;
+            border-radius: 6px;
             border: 1px solid rgba(255, 107, 129, 0.08);
             transform-style: preserve-3d;
             animation: diceRoll 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
             opacity: 0;
         }
 
-        /* ===== DELAY PER LETTER ===== */
-        .dice-word:nth-child(1) .dice-letter:nth-child(1) { animation-delay: 0.1s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(2) { animation-delay: 0.2s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(3) { animation-delay: 0.3s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(4) { animation-delay: 0.4s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(5) { animation-delay: 0.5s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(6) { animation-delay: 0.6s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(7) { animation-delay: 0.7s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(8) { animation-delay: 0.8s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(9) { animation-delay: 0.9s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(10) { animation-delay: 1.0s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(11) { animation-delay: 1.1s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(12) { animation-delay: 1.2s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(13) { animation-delay: 1.3s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(14) { animation-delay: 1.4s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(15) { animation-delay: 1.5s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(16) { animation-delay: 1.6s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(17) { animation-delay: 1.7s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(18) { animation-delay: 1.8s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(19) { animation-delay: 1.9s; }
-        .dice-word:nth-child(1) .dice-letter:nth-child(20) { animation-delay: 2.0s; }
+        /* ===== RESPONSIVE FONT SIZE ===== */
+        .dice-letter {
+            font-size: 40px;
+        }
 
-        .dice-word:nth-child(2) .dice-letter:nth-child(1) { animation-delay: 0.3s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(2) { animation-delay: 0.5s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(3) { animation-delay: 0.7s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(4) { animation-delay: 0.9s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(5) { animation-delay: 1.1s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(6) { animation-delay: 1.3s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(7) { animation-delay: 1.5s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(8) { animation-delay: 1.7s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(9) { animation-delay: 1.9s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(10) { animation-delay: 2.1s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(11) { animation-delay: 2.3s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(12) { animation-delay: 2.5s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(13) { animation-delay: 2.7s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(14) { animation-delay: 2.9s; }
-        .dice-word:nth-child(2) .dice-letter:nth-child(15) { animation-delay: 3.1s; }
+        @media screen and (max-width: 768px) {
+            .dice-letter {
+                font-size: 32px;
+                padding: 3px 5px;
+            }
+            .dice-word {
+                gap: 3px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .dice-letter {
+                font-size: 22px;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+            .dice-word {
+                gap: 2px;
+            }
+            .sub-names {
+                font-size: 18px !important;
+                letter-spacing: 4px !important;
+            }
+            .sub-names .ampersand {
+                font-size: 16px !important;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            .dice-letter {
+                font-size: 16px;
+                padding: 2px 3px;
+            }
+            .dice-word {
+                gap: 2px;
+            }
+            .sub-names {
+                font-size: 14px !important;
+                letter-spacing: 2px !important;
+            }
+        }
+
+        .dice-letter.space {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0 3px;
+            color: transparent;
+            animation: none;
+            opacity: 1;
+        }
+
+        /* ===== DELAY PER LETTER ===== */
+        .dice-word:nth-child(1) .dice-letter:nth-child(1) { animation-delay: 0.05s; }
+        .dice-word:nth-child(1) .dice-letter:nth-child(2) { animation-delay: 0.10s; }
+        .dice-word:nth-child(1) .dice-letter:nth-child(3) { animation-delay: 0.15s; }
+        .dice-word:nth-child(1) .dice-letter:nth-child(4) { animation-delay: 0.20s; }
+        .dice-word:nth-child(1) .dice-letter:nth-child(5) { animation-delay: 0.25s; }
+
+        .dice-word:nth-child(2) .dice-letter:nth-child(1) { animation-delay: 0.30s; }
+        .dice-word:nth-child(2) .dice-letter:nth-child(2) { animation-delay: 0.35s; }
+
+        .dice-word:nth-child(3) .dice-letter:nth-child(1) { animation-delay: 0.40s; }
+        .dice-word:nth-child(3) .dice-letter:nth-child(2) { animation-delay: 0.45s; }
+        .dice-word:nth-child(3) .dice-letter:nth-child(3) { animation-delay: 0.50s; }
+        .dice-word:nth-child(3) .dice-letter:nth-child(4) { animation-delay: 0.55s; }
+        .dice-word:nth-child(3) .dice-letter:nth-child(5) { animation-delay: 0.60s; }
+        .dice-word:nth-child(3) .dice-letter:nth-child(6) { animation-delay: 0.65s; }
+
+        .dice-word:nth-child(4) .dice-letter:nth-child(1) { animation-delay: 0.70s; }
+        .dice-word:nth-child(4) .dice-letter:nth-child(2) { animation-delay: 0.75s; }
+
+        .dice-word:nth-child(5) .dice-letter:nth-child(1) { animation-delay: 0.80s; }
+        .dice-word:nth-child(5) .dice-letter:nth-child(2) { animation-delay: 0.85s; }
+        .dice-word:nth-child(5) .dice-letter:nth-child(3) { animation-delay: 0.90s; }
+        .dice-word:nth-child(5) .dice-letter:nth-child(4) { animation-delay: 0.95s; }
 
         @keyframes diceRoll {
             0% {
@@ -251,10 +299,10 @@
             color: rgba(255, 215, 0, 0.5);
             text-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
             letter-spacing: 8px;
-            margin-top: 25px;
+            margin-top: 15px;
             text-transform: uppercase;
             opacity: 0;
-            animation: fadeInNames 1.5s ease forwards 3s;
+            animation: fadeInNames 1.5s ease forwards 1.5s;
         }
 
         .sub-names .ampersand {
@@ -319,7 +367,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2070&auto=format&fit=crop');
+            background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -461,7 +509,7 @@
             }
         }
 
-        /* ===== CONTAINER ===== */
+        /* ===== CONTAINER (MAY ROMANTIC BACKGROUND) ===== */
         .container {
             max-width: 600px;
             width: 100%;
@@ -473,6 +521,7 @@
             margin-top: 70px;
             z-index: 1;
 
+            /* ===== ROMANTIC FLOWER BACKGROUND SA LETTER ===== */
             background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -684,20 +733,6 @@
             .iloveyou-container span {
                 font-size: 18px;
             }
-
-            .dice-letter {
-                font-size: 28px !important;
-                padding: 3px 5px !important;
-            }
-
-            .sub-names {
-                font-size: 20px;
-                letter-spacing: 5px;
-            }
-
-            .sub-names .ampersand {
-                font-size: 18px;
-            }
         }
 
         @media screen and (max-width: 420px) {
@@ -723,27 +758,12 @@
             .iloveyou-container span {
                 font-size: 15px;
             }
-
-            .dice-letter {
-                font-size: 20px !important;
-                padding: 2px 4px !important;
-            }
-
-            .sub-names {
-                font-size: 16px;
-                letter-spacing: 3px;
-            }
-
-            .sub-names .ampersand {
-                font-size: 14px;
-                margin: 0 4px;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== SPLASH SCREEN ===== -->
+    <!-- ===== SPLASH SCREEN (BLACK) ===== -->
     <div class="splash-screen" id="splashScreen">
         <!-- Glowing effects -->
         <div class="glow"></div>
@@ -775,32 +795,46 @@
 
         <!-- ===== DICE / ROLLING TEXT ===== -->
         <div class="dice-container">
+            <!-- HAPPY -->
             <div class="dice-word">
                 <span class="dice-letter">H</span>
                 <span class="dice-letter">A</span>
                 <span class="dice-letter">P</span>
                 <span class="dice-letter">P</span>
                 <span class="dice-letter">Y</span>
-                <span class="dice-letter" style="padding: 0 10px; background: transparent; border: none; box-shadow: none; color: rgba(255,255,255,0.15);">•</span>
+            </div>
+
+            <!-- 56 -->
+            <div class="dice-word">
                 <span class="dice-letter">5</span>
                 <span class="dice-letter">6</span>
-                <span class="dice-letter" style="padding: 0 10px; background: transparent; border: none; box-shadow: none; color: rgba(255,255,255,0.15);">•</span>
+            </div>
+
+            <!-- MONTHS -->
+            <div class="dice-word">
                 <span class="dice-letter">M</span>
                 <span class="dice-letter">O</span>
                 <span class="dice-letter">N</span>
                 <span class="dice-letter">T</span>
                 <span class="dice-letter">H</span>
                 <span class="dice-letter">S</span>
-                <span class="dice-letter" style="padding: 0 10px; background: transparent; border: none; box-shadow: none; color: rgba(255,255,255,0.15);">•</span>
+            </div>
+
+            <!-- OF -->
+            <div class="dice-word">
                 <span class="dice-letter">O</span>
                 <span class="dice-letter">F</span>
-                <span class="dice-letter" style="padding: 0 10px; background: transparent; border: none; box-shadow: none; color: rgba(255,255,255,0.15);">•</span>
+            </div>
+
+            <!-- LOVE -->
+            <div class="dice-word">
                 <span class="dice-letter">L</span>
                 <span class="dice-letter">O</span>
                 <span class="dice-letter">V</span>
                 <span class="dice-letter">E</span>
             </div>
 
+            <!-- ===== SUBTEXT ===== -->
             <div class="sub-names">
                 MAYE <span class="ampersand">&</span> CLA
             </div>
@@ -892,7 +926,7 @@
                 <p>
                     Pasensya na po mhie kun may panahon nga usa ako nga nagpapainit tim ulo. Sorry kun danay nasasakitan ka tak ginbubuhat kun may nahihimo ako.
                     Mabawi po ako sunod mhie.. see you soooon mamhie.. IMISSYOU & ILOVEYOU SO MUCH ❤️ ingat ka permi ngada. 
-                    HAPPY MONTHSARY AKON ASAWA ❤️❤️❤️
+                    HAPPY MONTHSARY AKON ASAWA ❤️❤️
                 </p>
 
                 <div class="closing">
